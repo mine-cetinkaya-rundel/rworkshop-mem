@@ -1,0 +1,47 @@
+---
+title: "R Workshop"
+author: "Mine Cetinkaya-Rundel"
+date: "October 13, 2015"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Outline
+
+- Introduction to R and RStudio
+- Reproducible data analysis with R Markdown
+- Data visualization
+- Data wrangling
+- What next?
+- Hands on exercises
+
+# Introduction to R and RStudio
+
+## What is R and RStudio
+
+- **R:** Statistical programming language
+
+- **RStudio:** 
+    - Inregtrated development environment for R
+    - Powerful and productive user interface for R
+
+- Both are free and open-source
+
+## Getting started
+
+- Traditionally you would install R and RStudio on your computer
+
+- We will skip over that step for now for efficiency and use the RStudio server at
+
+https://vm-manage.oit.duke.edu/containers
+
+(Log in with your Duke Net ID and password)
+
+- Local installation instructions will be provided at the end of the workshop
+
+
+
+
