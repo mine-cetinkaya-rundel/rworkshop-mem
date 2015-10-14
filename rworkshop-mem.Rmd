@@ -15,6 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 - Introduction to R and RStudio
 - Reproducible data analysis with R Markdown
+- Loading data
 - Data visualization
 - Data wrangling
 - Basic R syntax
