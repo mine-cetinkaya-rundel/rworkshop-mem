@@ -251,7 +251,7 @@ library(dplyr)</pre>
 
 </article></slide><slide class=''><hgroup><h2>Your turn!</h2></hgroup><article  id="your-turn-2">
 
-<p>Suppose Sammy works on average 8.37 hours per day, 5 days per week. How many hours do they work on average per week?</p>
+<p>Suppose Sammy works on average 8.37 hours per day, 5 days per week. How many hours does Sammy work on average per week?</p>
 
 <p>Add a sentence to your document that includes simple inline R code that answers this question, along the lines of&#8230;</p>
 
@@ -597,18 +597,19 @@ library(dplyr)</pre>
 
 <pre >## Source: local data frame [253 x 54]
 ## 
-##    FID OBJECTID AmbulanceR BikeAge_Gr Bike_Age Bike_Alc_D       Bike_Dir
-## 1   18       19         No         NA        6         No Not Applicable
-## 2   53       54        Yes      50-59       52         No   With Traffic
-## 3   56       57        Yes      16-19       18         No             NA
-## 4  209      210         No      16-19       16         No Facing Traffic
-## 5  228      229        Yes      40-49       40         No   With Traffic
-## 6  620      621        Yes      50-59       55         No   With Traffic
-## 7  667      668        Yes      60-69       61         No Not Applicable
-## 8  458      459        Yes      60-69       62         No   With Traffic
-## 9  576      577         No      40-49       49         No   With Traffic
-## 10 618      619         No      20-24       23         No   With Traffic
-## .. ...      ...        ...        ...      ...        ...            ...
+##      FID OBJECTID AmbulanceR BikeAge_Gr Bike_Age Bike_Alc_D       Bike_Dir
+##    (int)    (int)      (chr)      (chr)    (int)      (chr)          (chr)
+## 1     18       19         No         NA        6         No Not Applicable
+## 2     53       54        Yes      50-59       52         No   With Traffic
+## 3     56       57        Yes      16-19       18         No             NA
+## 4    209      210         No      16-19       16         No Facing Traffic
+## 5    228      229        Yes      40-49       40         No   With Traffic
+## 6    620      621        Yes      50-59       55         No   With Traffic
+## 7    667      668        Yes      60-69       61         No Not Applicable
+## 8    458      459        Yes      60-69       62         No   With Traffic
+## 9    576      577         No      40-49       49         No   With Traffic
+## 10   618      619         No      20-24       23         No   With Traffic
+## ..   ...      ...        ...        ...      ...        ...            ...
 ## Variables not shown: Bike_Injur (chr), Bike_Pos (chr), Bike_Race (chr),
 ##   Bike_Sex (chr), City (chr), County (chr), CrashAlcoh (chr), CrashDay
 ##   (chr), Crash_Date (chr), Crash_Grp (chr), Crash_Hour (int), Crash_Loc
@@ -631,27 +632,28 @@ library(dplyr)</pre>
 
 <pre >## Source: local data frame [20 x 54]
 ## 
-##    FID OBJECTID AmbulanceR BikeAge_Gr Bike_Age Bike_Alc_D       Bike_Dir
-## 1   18       19         No         NA        6         No Not Applicable
-## 2   47       48         No     10-Jun        9         No Not Applicable
-## 3  124      125        Yes     10-Jun        8         No   With Traffic
-## 4  531      532        Yes     10-Jun        7         No   With Traffic
-## 5  704      705        Yes     10-Jun        9         No Not Applicable
-## 6   42       43         No     10-Jun        8         No   With Traffic
-## 7  392      393        Yes        0-5        2         No Not Applicable
-## 8  941      942         No     10-Jun        9         No   With Traffic
-## 9  436      437        Yes     10-Jun        6         No Not Applicable
-## 10 160      161        Yes     10-Jun        7         No   With Traffic
-## 11 273      274        Yes     10-Jun        7         No Facing Traffic
-## 12  78       79        Yes     10-Jun        7         No   With Traffic
-## 13 422      423         No     10-Jun        9         No Not Applicable
-## 14 570      571         No         NA        0    Missing Not Applicable
-## 15 683      684        Yes     10-Jun        8         No Not Applicable
-## 16  62       63        Yes     10-Jun        7         No   With Traffic
-## 17 248      249         No        0-5        4         No Not Applicable
-## 18 306      307        Yes     10-Jun        8         No   With Traffic
-## 19 231      232        Yes     10-Jun        8         No   With Traffic
-## 20 361      362        Yes     10-Jun        9         No   With Traffic
+##      FID OBJECTID AmbulanceR BikeAge_Gr Bike_Age Bike_Alc_D       Bike_Dir
+##    (int)    (int)      (chr)      (chr)    (int)      (chr)          (chr)
+## 1     18       19         No         NA        6         No Not Applicable
+## 2     47       48         No     10-Jun        9         No Not Applicable
+## 3    124      125        Yes     10-Jun        8         No   With Traffic
+## 4    531      532        Yes     10-Jun        7         No   With Traffic
+## 5    704      705        Yes     10-Jun        9         No Not Applicable
+## 6     42       43         No     10-Jun        8         No   With Traffic
+## 7    392      393        Yes        0-5        2         No Not Applicable
+## 8    941      942         No     10-Jun        9         No   With Traffic
+## 9    436      437        Yes     10-Jun        6         No Not Applicable
+## 10   160      161        Yes     10-Jun        7         No   With Traffic
+## 11   273      274        Yes     10-Jun        7         No Facing Traffic
+## 12    78       79        Yes     10-Jun        7         No   With Traffic
+## 13   422      423         No     10-Jun        9         No Not Applicable
+## 14   570      571         No         NA        0    Missing Not Applicable
+## 15   683      684        Yes     10-Jun        8         No Not Applicable
+## 16    62       63        Yes     10-Jun        7         No   With Traffic
+## 17   248      249         No        0-5        4         No Not Applicable
+## 18   306      307        Yes     10-Jun        8         No   With Traffic
+## 19   231      232        Yes     10-Jun        8         No   With Traffic
+## 20   361      362        Yes     10-Jun        9         No   With Traffic
 ## Variables not shown: Bike_Injur (chr), Bike_Pos (chr), Bike_Race (chr),
 ##   Bike_Sex (chr), City (chr), County (chr), CrashAlcoh (chr), CrashDay
 ##   (chr), Crash_Date (chr), Crash_Grp (chr), Crash_Hour (int), Crash_Loc
@@ -747,6 +749,7 @@ library(dplyr)</pre>
 <pre >## Source: local data frame [13 x 2]
 ## 
 ##    BikeAge_Gr crash_count
+##         (chr)       (int)
 ## 1         0-5          60
 ## 2      10-Jun         421
 ## 3      15-Nov         747
@@ -820,6 +823,7 @@ library(dplyr)</pre>
 <pre >## Source: local data frame [13 x 2]
 ## 
 ##    BikeAge_Gr count
+##         (chr) (int)
 ## 1         0-5    60
 ## 2       11-15   747
 ## 3       16-19   605
@@ -843,12 +847,13 @@ library(dplyr)</pre>
 
 <pre >## Source: local data frame [5 x 54]
 ## 
-##   FID OBJECTID AmbulanceR BikeAge_Gr Bike_Age Bike_Alc_D       Bike_Dir
-## 1  18       19         No         NA        6         No Not Applicable
-## 2  29       30        Yes      50-59       51         No   With Traffic
-## 3  33       34         No         NA       10         No   With Traffic
-## 4  35       36        Yes      16-19       17         No             NA
-## 5  49       50         No         NA        6         No Facing Traffic
+##     FID OBJECTID AmbulanceR BikeAge_Gr Bike_Age Bike_Alc_D       Bike_Dir
+##   (int)    (int)      (chr)      (chr)    (int)      (chr)          (chr)
+## 1    18       19         No         NA        6         No Not Applicable
+## 2    29       30        Yes      50-59       51         No   With Traffic
+## 3    33       34         No         NA       10         No   With Traffic
+## 4    35       36        Yes      16-19       17         No             NA
+## 5    49       50         No         NA        6         No Facing Traffic
 ## Variables not shown: Bike_Injur (chr), Bike_Pos (chr), Bike_Race (chr),
 ##   Bike_Sex (chr), City (chr), County (chr), CrashAlcoh (chr), CrashDay
 ##   (chr), Crash_Date (chr), Crash_Grp (chr), Crash_Hour (int), Crash_Loc
@@ -872,12 +877,13 @@ bike %&gt;%
 
 <pre >## Source: local data frame [5 x 54]
 ## 
-##   FID OBJECTID AmbulanceR BikeAge_Gr Bike_Age Bike_Alc_D       Bike_Dir
-## 1 460      461        Yes       6-10        7         No Not Applicable
-## 2 474      475        Yes      50-59       50         No   With Traffic
-## 3 479      480        Yes      16-19       16         No Not Applicable
-## 4 487      488         No      40-49       47        Yes   With Traffic
-## 5 488      489        Yes      30-39       35         No Facing Traffic
+##     FID OBJECTID AmbulanceR BikeAge_Gr Bike_Age Bike_Alc_D       Bike_Dir
+##   (int)    (int)      (chr)      (chr)    (int)      (chr)          (chr)
+## 1   460      461        Yes       6-10        7         No Not Applicable
+## 2   474      475        Yes      50-59       50         No   With Traffic
+## 3   479      480        Yes      16-19       16         No Not Applicable
+## 4   487      488         No      40-49       47        Yes   With Traffic
+## 5   488      489        Yes      30-39       35         No Facing Traffic
 ## Variables not shown: Bike_Injur (chr), Bike_Pos (chr), Bike_Race (chr),
 ##   Bike_Sex (chr), City (chr), County (chr), CrashAlcoh (chr), CrashDay
 ##   (chr), Crash_Date (chr), Crash_Grp (chr), Crash_Hour (int), Crash_Loc
@@ -912,18 +918,19 @@ bike %&gt;%
 
 <pre >## Source: local data frame [5,716 x 53]
 ## 
-##    FID AmbulanceR BikeAge_Gr Bike_Age Bike_Alc_D       Bike_Dir
-## 1   18         No         NA        6         No Not Applicable
-## 2   29        Yes      50-59       51         No   With Traffic
-## 3   33         No         NA       10         No   With Traffic
-## 4   35        Yes      16-19       17         No             NA
-## 5   49         No         NA        6         No Facing Traffic
-## 6   53        Yes      50-59       52         No   With Traffic
-## 7   56        Yes      16-19       18         No             NA
-## 8   60         No      40-49       40         No Facing Traffic
-## 9   63        Yes       6-10        6         No Facing Traffic
-## 10  66        Yes       6-10        7         No             NA
-## .. ...        ...        ...      ...        ...            ...
+##      FID AmbulanceR BikeAge_Gr Bike_Age Bike_Alc_D       Bike_Dir
+##    (int)      (chr)      (chr)    (int)      (chr)          (chr)
+## 1     18         No         NA        6         No Not Applicable
+## 2     29        Yes      50-59       51         No   With Traffic
+## 3     33         No         NA       10         No   With Traffic
+## 4     35        Yes      16-19       17         No             NA
+## 5     49         No         NA        6         No Facing Traffic
+## 6     53        Yes      50-59       52         No   With Traffic
+## 7     56        Yes      16-19       18         No             NA
+## 8     60         No      40-49       40         No Facing Traffic
+## 9     63        Yes       6-10        6         No Facing Traffic
+## 10    66        Yes       6-10        7         No             NA
+## ..   ...        ...        ...      ...        ...            ...
 ## Variables not shown: Bike_Injur (chr), Bike_Pos (chr), Bike_Race (chr),
 ##   Bike_Sex (chr), City (chr), County (chr), CrashAlcoh (chr), CrashDay
 ##   (chr), Crash_Date (chr), Crash_Grp (chr), Crash_Hour (int), Crash_Loc
@@ -994,6 +1001,7 @@ bike %&gt;%
 <pre >## Source: local data frame [13 x 2]
 ## 
 ##    BikeAge_Gr crash_count
+##         (chr)       (int)
 ## 1          70          12
 ## 2         70+          58
 ## 3         0-5          60
@@ -1018,6 +1026,7 @@ bike %&gt;%
 <pre >## Source: local data frame [13 x 2]
 ## 
 ##    BikeAge_Gr crash_count
+##         (chr)       (int)
 ## 1       40-49         920
 ## 2       11-15         747
 ## 3       50-59         739
@@ -1077,6 +1086,7 @@ dim(bike_perc20)</pre>
 <pre >## Source: local data frame [1 x 1]
 ## 
 ##   Bike_Age
+##      (int)
 ## 1        6</pre>
 
 <pre >- For all observations in row 1: `bike[1, ]`

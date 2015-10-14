@@ -165,7 +165,7 @@ Results in this output: "I counted `r 1 + 1` red trucks on the highway."
 ## Your turn!
 
 Suppose Sammy works on average 8.37 hours per day, 5 days
-per week. How many hours do they work on average per week?
+per week. How many hours does Sammy work on average per week?
 
 Add a sentence to your document that includes simple inline R code that answers
 this question, along the lines of...
