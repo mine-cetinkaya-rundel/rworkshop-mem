@@ -666,7 +666,11 @@ bike[1,5] # row 1, column 5
 
 # What's next?
 
-## Want more R?
+## Want more R? {.smaller}
+
+- Local install
+    - R: https://cran.r-project.org/
+    - RStudio: https://www.rstudio.com/products/RStudio/#Desktop
 
 - Resources for learning R:
     - [Coursera](https://www.coursera.org/)
