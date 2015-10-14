@@ -1,7 +1,7 @@
 ---
-title: "R Workshop"
+title: "R Workshop / Duke MEM"
 author: "Mine Cetinkaya-Rundel"
-date: "October 13, 2015"
+date: "October 14, 2015"
 output: ioslides_presentation
 ---
 
@@ -26,7 +26,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 - All source code at https://github.com/mine-cetinkaya-rundel/rworkshop-mem
 
-- Slides at 
+- Slides at http://rpubs.com/minebocek/117428
 
 # Introduction to R and RStudio
 
