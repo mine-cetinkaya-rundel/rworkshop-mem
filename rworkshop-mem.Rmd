@@ -299,7 +299,7 @@ A statistical graphic is a...
 - with data being **statistically transformed** (summarised, log-transformed)
 - and mapped onto a specific **facet** and **coordinate system**
     
-## Arrival vs. departure delay {.smaller}
+## Biker age vs. crash hour {.smaller}
 
 ```{r echo=FALSE, fig.height=3, fig.width=5, warning=FALSE}
 ggplot(data = bike, aes(x = Crash_Hour, y = Bike_Age)) +
@@ -312,7 +312,7 @@ ggplot(data = bike, aes(x = Crash_Hour, y = Bike_Age)) +
 - What type of scales are used to map data to aesthetics?
 - Are the variables statistically transformed before plotting?
 
-## Arrival vs. departure delay - code
+## Biker age vs. crash hour - code
 
 ```{r fig.height=3, fig.width=5}
 ggplot(data = bike, aes(x = Crash_Hour, y = Bike_Age)) +
@@ -512,7 +512,7 @@ these data
 
 - Install:
 ```{r eval=FALSE}
-install.packages(stringr)
+install.packages("stringr")
 ```
 
 - Load:
