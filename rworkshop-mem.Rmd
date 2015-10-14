@@ -9,22 +9,31 @@ output: ioslides_presentation
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Intro
+
 ## Outline
 
 - Introduction to R and RStudio
 - Reproducible data analysis with R Markdown
 - Data visualization
 - Data wrangling
+- Basic R syntax
 - What next?
 - Hands on exercises
+
+## Materials
+
+- All source code at https://github.com/mine-cetinkaya-rundel/rworkshop-mem
+
+- Slides at 
 
 # Introduction to R and RStudio
 
 ## What is R and RStudio
 
-- **R:** Statistical programming language
+- **R\:** Statistical programming language
 
-- **RStudio:** 
+- **RStudio\:** 
     - Inregtrated development environment for R
     - Powerful and productive user interface for R
 
@@ -75,12 +84,14 @@ workshop
 ```{r install-packages, eval=FALSE}
 install.packages("ggplot2")
 install.packages("dplyr")
+install.packages("nycflights13")
 ```
 
 - Then, load the packages by running the following:
 ```{r load-packages, message=FALSE}
 library(ggplot2)
 library(dplyr)
+library(nycflights13)
 ```
     
 - This is just one way of installing a package, there is also a GUI approach in 
@@ -174,8 +185,8 @@ be available in your Console
     
 [ Demo ]
 
-**Tip:** Use the *Run all previous chunks* in the source file and *Run current chunk code*
-functionality in the buttons in each code chunk to help manage workspaces.
+**Tip\:** Use the *Run all previous chunks* in the source file and *Run current chunk
+code* functionality in the buttons in each code chunk to help manage workspaces.
 
 ## Workspaces and reproducibilty
 
@@ -186,17 +197,270 @@ might / will be frustrating at first.
 ensures that all variables, functions, etc. that are being used in the R Markdown 
 document are explicitly defined or loaded.
 
-## Your turn!
+## Your turn! {.smaller}
 
 1. Define `x = 2` in the Console. Then, in your Console run `x * 3`. Does your code 
 run as expected?
 
 2. Now, insert a new code chunk in your R Markdown document and in this chunk type
 `x * 3` only. Knit your document. Does the document compile, or do you get an error?
-If you get an error, how can you fix this? Implement the fix and Knit your document.
-Make sure you are able to compile without errors before you move on.
+If you get an error, what does the error say, and how can you fix it? Implement the fix 
+and Knit your document. Make sure you are able to compile without errors before you 
+move on.
 
+**Tip\:** Insert a new code chunk bu clicking Chunks $\rightarrow$ Insert Chunk.
 
-3. Next insert another code chunk in your
+3. Next insert another code chunk in your R Markdown document and define `y = 4` and
+calculate `y + 5`. Knit your document. Does everything work as expected?
 
+4. Now run `y + 5` in your Console. Does your code run as expected or do you get an error?
+If you get an error, what does the error say, and how can you fix it? Implement the fix.
+
+## Code chunk options
+
+- You can hide the code, hide the result, hide warnings, messages, etc.
+
+- Refer to the handy R Markdown cheat sheet, also available at
+https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf
+
+- Another good reference: http://rmarkdown.rstudio.com/authoring_rcodechunks.html
+
+# Data visualization
+
+## Data visualization in R
+
+- Using base R functions
+
+- Using the `ggplot2` package $\leftarrow$ our focus today
+
+- Using a variety of other packages like `lattice`, `ggvis`, etc.
+
+## The Grammar of Graphics
+
+- Visualisation concept created by Wilkinson (1999)
+    - to define the basic elements of a statistical graphic 
+
+- Adapted for R by Wickham (2009) who created the `ggplot2` package
+    - consistent and compact syntax to describe statistical graphics
+    - highly modular as it breaks up graphs into semantic components 
+
+- Is not a guide which graph to choose and how to convey information best!
+
+Source: https://rpubs.com/timwinke/ggplot2workshop
+
+## The Grammar of Graphics - Terminology
+
+A statistical graphic is a...
+
+- mapping of **data**
+- to **aesthetic attributes** (color, size, xy-position)
+- using **geometric objects** (points, lines, bars)
+- with data being **statistically transformed** (summarised, log-transformed)
+- and mapped onto a specific **facet** and **coordinate system**
+
+## Data for today's exercises...
+
+can be found in the `nycflights13` package
+
+- This package contains information about all flights that departed from 
+NYC (e.g. EWR, JFK and LGA) in 2013: 336,776 flights in total. 
+
+- To help understand what causes delays, it also includes a number of other useful 
+datasets:
+    - `weather`: hourly meterological data for each airport
+    - `planes`: construction information about each plane
+    - `airports`: airport names and locations
+    - `airlines`: translation between two letter carrier codes and names
+    
+## Arrival vs. departure delay {.smaller}
+
+```{r arrdelay-vs-depdelay, cache=TRUE, echo=FALSE, fig.height=3, fig.width=5, warning=FALSE}
+ggplot(data = flights, aes(x = dep_delay, y = arr_delay)) +
+  geom_point()
+```
+
+- Which data is used as an input?
+- What geometric objects are chosen for visualization?
+- What variables are mapped onto which attributes?
+- What type of scales are used to map data to aesthetics?
+- Are the variables statistically transformed before plotting?
+
+## Arrival vs. departure delay - code
+
+```{r arrdelay-vs-depdelay-code, cache=TRUE, fig.height=3, fig.width=5}
+ggplot(data = flights, aes(x = dep_delay, y = arr_delay)) +
+  geom_point()
+```
+
+## Altering features {.smaller}
+
+```{r arrdelay-vs-depdelay-geom-change, cache=TRUE, echo=FALSE, fig.height=3, fig.width=5, warning=FALSE}
+ggplot(data = flights, aes(x = dep_delay, y = arr_delay)) +
+  geom_point(alpha = 0.5, color = "blue")
+```
+
+- How did the plot change?
+- Are these changes based on data (i.e. can be mapped to variables in the dataset) or
+changes in preferences for geometric objects?
+
+## Altering features - code
+
+```{r arrdelay-vs-depdelay-geom-change-code, cache=TRUE, fig.height=3, fig.width=5}
+ggplot(data = flights, aes(x = dep_delay, y = arr_delay)) +
+  geom_point(alpha = 0.5, color = "blue")
+```
+
+## More alterations {.smaller}
+
+```{r arrdelay-vs-depdelay-aes-change, cache=TRUE, echo=FALSE, fig.height=3, fig.width=8, warning=FALSE}
+ggplot(data = flights, aes(x = dep_delay, y = arr_delay, color = distance)) +
+  geom_point(alpha = 0.5) +
+  facet_grid(. ~ origin)
+```
+
+- How did the plot change?
+- Are these changes based on data (i.e. can be mapped to variables in the dataset) or
+changes in preferences for geometric objects?
+
+## More alterations - code
+
+```{r arrdelay-vs-depdelay-aes-change-code, cache=TRUE, fig.height=3, fig.width=8, warning=FALSE}
+ggplot(data = flights, aes(x = dep_delay, y = arr_delay, color = distance)) +
+  geom_point(alpha = 0.5) +
+  facet_grid(. ~ origin)
+```
+
+## Anatomy of ggplots
+
+```
+ggplot(data = [dataframe], aes(x = [var_x], y = [var_y], 
+       color = [var_for_color], fill = [var_for_fill], 
+       shape = [var_for_shape])) +
+    geom_[some_geom] +
+    ... # other options
+```
+
+## Histograms
+
+```{r hist-arrdelay, cache=TRUE, fig.height=3, fig.width=7, warning=FALSE}
+ggplot(data = flights, aes(x = arr_delay)) +
+  geom_histogram(binwidth = 15)
+```
+
+## Boxplots
+
+```{r box-arrdelay-origin, cache=TRUE, fig.height=3, fig.width=7, warning=FALSE}
+ggplot(data = flights, aes(y = arr_delay, x = origin)) +
+  geom_boxplot()
+```
+
+## Barplots
+
+```{r bar-origin, cache=TRUE, fig.height=3, fig.width=7, warning=FALSE}
+ggplot(data = flights, aes(x = origin)) +
+  geom_bar()
+```
+
+## Segmented barplots
+
+```{r bar-origin-day, cache=TRUE, fig.height=3, fig.width=7, warning=FALSE}
+ggplot(data = flights, aes(x = origin, fill = carrier)) +
+  geom_bar()
+```
+
+## Segmented barplots - proportions
+
+```{r bar-origin-day-fill, cache=TRUE, fig.height=3, fig.width=7, warning=FALSE}
+ggplot(data = flights, aes(x = origin, fill = carrier)) +
+  geom_bar(position="fill")
+```
+
+## More `ggplot2` resources
+
+Visit http://docs.ggplot2.org/current/ for documentation on the current version
+of the `ggplot2` package.
+
+It's full of examples!
+
+# Data wrangling
+
+## Data wrangling in R
+
+- Using base R functions
+
+- Using the `dplyr` package $\leftarrow$ our focus today
+
+- Using a variety of other packages like `plyr`, `tidyr`, `lubridate`, etc.
+
+## Data wrangling with `dplyr`
+
+The `dplyr` package is based on the concepts of functions as verbs that 
+manipulate data frames:
+
+- `filter()`: pick rows matching criteria
+- `select()`: pick columns by name 
+- `rename()`: rename specific columns
+- `arrange()`: reorder rows 
+- `mutate()`: add new variables
+- `transmute()`: create new data frame with variables
+- `sample_n()` / `sample_frac()`: randomly sample rows
+- `summarise()`: reduce variables to values
+
+## `dplyr` rules
+
+- First argument is a data frame
+- Subsequent arguments say what to do with data frame
+- Always return a data frame 
+- Avoid modify in place
+
+## Filter rows with `filter` {.smaller}
+
+Select a subset of rows in a data frame.
+
+```{r}
+filter(flights, origin == "JFK")
+```
+
+## Easily `filter` for many conditions
+
+```{r}
+filter(flights, origin == "JFK", dest == "RDU", month == 1)
+```
+
+## Your turn!
+
+Which airport (`JFK`, `EWR`, or `LGA`) has the most number of flights to `RDU` in October?
+
+## Commonly used logical operators in R {.smaller}
+
+operator    | definition
+------------|--------------------------
+`<`         | less than
+`<=`        |	less than or equal to
+`>`         | greater than
+`>=`        |	greater than or equal to
+`==`        |	exactly equal to
+`!=`        |	not equal to
+`x | y`     | `x` OR `y`
+`x & y`     | `x` AND `y`
+
+## Commonly used logical operators in R {.smaller}
+
+operator     | definition
+-------------|--------------------------
+`is.na(x)`   | test if `x` is `NA`
+`!is.na(x)`  | test if `x` is not `NA`
+`x %in% y`   | test if `x` is in `y`
+`!(x %in% y)`| test if `x` is not in `y`
+`!x`         | not `x`
+
+## Aside: real data is messy! {.smaller}
+
+What in the world does a `BikeAge_gr` of `10-Jun` or `15-Nov` mean?
+
+```{r}
+bike %>%
+  group_by(BikeAge_Gr) %>%
+  summarise(crash_count = n())
+```
 
